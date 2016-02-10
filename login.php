@@ -3,11 +3,7 @@
 	<style>
 	#resetPassword{display:none;}
 	.cancel{margin-left:50px;}
-	input.btn.btn-primary.pull-left {
-	    height: 30px;
-	    width: auto;
-	    padding: 5px 25px;
-	}
+	input.btn.btn-primary.pull-left {height: 30px;width: auto;padding: 5px 25px;}
 	</style>
 </head>
 <body>
