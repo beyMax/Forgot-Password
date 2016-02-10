@@ -3,7 +3,7 @@ include "db.php"; //connect with your database using a php file
 if(isset($_POST["submit"])){
 	$email = test_input($_POST["mail"]);
 	$code = test_input($_POST["code"]);
-	$query = "SELECT email, password, firstname, lastname FROM professionals WHERE email='$email'";
+	$query = "SELECT email, password, firstname, lastname FROM professionals WHERE email='$email'"; // professionals is the table name
 	$result = mysql_query($query) or die("Query failed.<br /><br />$query<br /><br />" . mysql_error());
 	$check = 0;
 	while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
