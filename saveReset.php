@@ -1,5 +1,5 @@
 <?php
-include "db.php";
+include "db.php"; //connect with your database using a php file
 if(isset($_POST["submit"])){
 	$email = test_input($_POST["mail"]);
 	$code = test_input($_POST["code"]);
@@ -21,7 +21,7 @@ if(isset($_POST["submit"])){
 			
 			$to = $email;
 			$subject="Password successfully changed";
-			$from = 'support@b-di.com';
+			$from = 'support@abcd.com';
 			$body = 'Hi '.$name.', <br/> <br/>
 			This email is to confirm that you recently changed your password for the CXLIST professional account.<br /><br />
 			If you did not request this change, please contact CXLIST support immediately at <span style="color:#139FE4;">info@cxlist.com</span><br /><br />
@@ -35,19 +35,19 @@ if(isset($_POST["submit"])){
 			$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 			mail($to,$subject,$body,$headers);
 			echo '<script type="text/javascript">window.alert("Password successfully changed");</script>';
-			echo '<script type="text/javascript">window.location="https://www.cxlist.com/prologin.php";</script>';
+			echo '<script type="text/javascript">window.location="https://www.abcd.com/login.php";</script>';
 		}else{
 			echo '<script type="text/javascript">window.alert("Go back to login page and try again later.");</script>';
-			echo '<script type="text/javascript">window.location="https://www.cxlist.com/prologin.php";</script>';
+			echo '<script type="text/javascript">window.location="https://www.abcd.com/login.php";</script>';
 		}
 	}
 	if( $check == 0 ){
 		echo '<script type="text/javascript">window.alert("Account does not found.");</script>';
-		header("Location:prologin.php");
+		header("Location:login.php");
 	}
 }else{
 	echo '<script type="text/javascript">window.alert("Go back to login page and try again later.");</script>';
-	echo '<script type="text/javascript">window.location="https://www.cxlist.com/prologin.php";</script>';
+	echo '<script type="text/javascript">window.location="https://www.abcd.com/login.php";</script>';
 }
 
 function test_input($data) {
