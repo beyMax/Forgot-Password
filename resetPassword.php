@@ -1,7 +1,6 @@
 <?php
 	session_start();
-	include "db.php";
-	include "pagetop.php";
+	include "db.php";// Connect with database
 
 if(isset($_GET["q"]) && isset($_GET["id"])){
 
@@ -15,9 +14,8 @@ if(isset($_GET["q"]) && isset($_GET["id"])){
 		$fname = $row["firstname"];
 		$lname = $row["lastname"];
 		$name = $fname ." ".$lname;
-		$encrypt = md5(28624*13+$pass);
+		$encrypt = md5(13*31+$pass); // encript your data (some addition, multiplication etc for security improvement)
 		if($encrypt==$code){
-
 ?>
 <br /><br /><h1>Reset your password </h1><br /><br />
 <form id="login" role="form" class="clearfix" action="saveReset.php" method="post" onsubmit="return validForm();">
@@ -44,12 +42,12 @@ if(isset($_GET["q"]) && isset($_GET["id"])){
 <?php
 		}else{
 			echo '<script type="text/javascript">window.alert("Go back to login page and try again later.");</script>';
-			header("Location:prologin.php");
+			header("Location:login.php");
 		}
 	}
 }else{
 	echo '<script type="text/javascript">window.alert("Go back to login page and try again later.");</script>';
-	header("Location:prologin.php");
+	header("Location:login.php");
 }
 
 function test_input($data) {
